@@ -1,0 +1,27 @@
+As camadas do sistema são
+BLL - Camada de Aceso a Dados: Ficam as funções de regras de negócios e outras que não interagem diretamente com o banco
+DAL - Função que interage diretamente com o banco de dados
+MODEL/VIEW - Camadas de apresentação 
+
+
+
+Quando começa com s minusculo é Session. Exemplo:
+sCodDoador
+sTituloMsg
+sModoInserir
+
+Quando começa com obj é objeto, seguido de sua classe. Exemplo:
+obj_Doador
+obj_Receptor_DAL
+obj_Movimentacao_BLL
+
+Quando é parametro inicia com p minusculo. Exemplo:
+pObj_Doacao
+pId
+pModoInserir
+
+As propriedades dos atributos começam com p minusculo. Exemplo:
+pSangue_id
+
+Os valores booleanos são representados tanto com True/False como 0/1.
+Em algumas funções existem retornos inteiros como 0,1 e 2. 

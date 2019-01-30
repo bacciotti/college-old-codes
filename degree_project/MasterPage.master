@@ -1,0 +1,185 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>:: Bloodsoft :: Gestão de Banco de Sangue</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 79%;
+            height: 249px;
+        }
+        .style6
+        {
+            font-family: Calibri;
+            text-align: right;
+        }
+        .style9
+        {
+            height: 96px;
+            width: 904px;
+        }
+        .style10
+        {
+            height: 31px;
+            background-color: #FFFFFF;
+            text-align: right;
+        }
+        .style12
+        {
+            height: 30px;
+            text-align: center;
+            font-family: Calibri;
+        }
+        .style13
+        {
+            height: 96px;
+            background-color: #FFFFFF;
+            width: 98px;
+        }
+        .style14
+        {
+            height: 96px;
+            background-color: #FFFFFF;
+            width: 37px;
+        }
+        .style15
+        {
+            width: 100%;
+        }
+        .style16
+        {
+            width: 209px;
+            height: 57px;
+        }
+        .style17
+        {
+            height: 57px;
+        }
+    </style>
+</head>
+<body style="height: 497px">
+    <form id="form1" runat="server">
+    <div>
+        <table class="style1" align="center">
+            <tr>
+                <td class="style10" colspan="3" bgcolor="White">
+                    <table class="style15">
+                        <tr>
+                            <td class="style16">
+                    <strong>
+                    <a href= Dashboard.aspx>
+                    <asp:Image ID="Image1" runat="server" CssClass="style6" 
+                        ImageUrl="~/img/logo.jpg" ImageAlign="Middle"  /></a>
+                                </strong>
+                            </td>
+                            <td class="style17">
+                                <strong>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>&nbsp;<asp:Label 
+                        ID="Label7" runat="server" Font-Names="Calibri" Font-Size="Small" 
+                        Text="Usuário:"></asp:Label>
+&nbsp;<asp:LoginName ID="LoginName1" runat="server" Font-Bold="True" Font-Names="Calibri" />
+                    &nbsp;::
+                    <asp:Label ID="lblData" runat="server" Font-Names="Calibri" Font-Size="Medium" 
+                        Text="[Data]"></asp:Label>
+                    <br />
+                                <br />
+                                <asp:Label ID="Label8" runat="server" Font-Italic="True" Font-Names="Calibri" 
+                                    Font-Size="Small" Text="Busca rápida por pessoa"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+    <asp:RangeValidator ID="RangeValidator1" runat="server" 
+        ControlToValidate="txtBuscaRapida" Enabled="False" ErrorMessage="Valor inválido" 
+        Font-Bold="True" Font-Names="Calibri" ForeColor="#CC0000" 
+        MaximumValue="999999999" MinimumValue="0" SetFocusOnError="True"></asp:RangeValidator>
+                    <asp:TextBox ID="txtBuscaRapida" runat="server" Font-Italic="True" 
+                        Width="157px" ToolTip="Busca rápida por pessoa" MaxLength="30"></asp:TextBox>
+                    <asp:Button ID="btnBuscaRapida" runat="server" 
+                        style="height: 26px" TabIndex="250" Text="Ok" />
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td class="style13" valign="top">
+                    <asp:Menu ID="Menu1" runat="server" BackColor="White" 
+                        DynamicHorizontalOffset="2" Font-Names="Calibri" Font-Size="Medium" 
+                        ForeColor="#284E98" StaticSubMenuIndent="10px">
+                        <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicMenuStyle BackColor="#B5C7DE" />
+                        <DynamicSelectedStyle BackColor="#507CD1" />
+                        <Items>
+                            <asp:MenuItem Text="Dashboard" Value="Dashboard" NavigateUrl="~/Dashboard.aspx" 
+                                ToolTip="Um resumo da situação atual do sistema "></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/BancoDeSangue.aspx" Text="Banco de Sangue" 
+                                Value="Banco de Sangue" 
+                                ToolTip="Quantidades de sangue existentes no banco"></asp:MenuItem>
+                            <asp:MenuItem Text="Doações" Value="Doações" NavigateUrl="~/Doacoes.aspx" 
+                                ToolTip="Listagem das últimas doações de sangue "></asp:MenuItem>
+                            <asp:MenuItem Text="Retiradas" Value="Retiradas" NavigateUrl="~/Retiradas.aspx" 
+                                ToolTip="Listagem das últimas retiradas de sangue">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Doadores" Value="Doadores" 
+                                NavigateUrl="~/Doadores.aspx" 
+                                ToolTip="Cadastre/edite doadores e realize doações">
+                            </asp:MenuItem>
+<asp:MenuItem Text="- Cadastrar doador" ToolTip="Cadastre um novo doador" Value="Cadastrar doador">
+</asp:MenuItem>
+                            <asp:MenuItem Text="Receptores" ToolTip="Cadastre/edite receptores" 
+                                Value="Receptores" NavigateUrl="~/Receptores.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="- Cadastrar receptor" 
+                                ToolTip="Cadastre um novo receptor" Value="Cadastrar receptor">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Usuários" Value="Usuários" NavigateUrl="~/Usuarios.aspx" 
+                                ToolTip="Cadastre/edite usuários do sistema ">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="- Cadastrar usuário" 
+                                ToolTip="Cadastre um novo usuário do sistema" Value="Cadastrar usuário">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Relatorios.aspx" Text="Relatórios" 
+                                Value="Relatórios" ToolTip="Gere relatórios"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Configuracoes.aspx" Text="Configurações" 
+                                Value="Configurações" ToolTip="Altere parâmetros básicos do sistema"></asp:MenuItem>
+                            <asp:MenuItem Text="- Estabelecimento" Value="Estabelecimento" 
+                                NavigateUrl="~/ConfEstab.aspx" ToolTip="Cadastre/edite o estabelecimento"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/PagCorresp.aspx" Text="Correspondências" 
+                                Value="Correspondências" ToolTip="Gere correspondências"></asp:MenuItem>
+                            <asp:MenuItem Text="Ajuda e suporte" Value="Ajuda e suporte" 
+                                ToolTip="Tire suas dúvidas" NavigateUrl="~/Ajuda/Introduo.html" 
+                                Target="_blank"></asp:MenuItem>
+                            <asp:MenuItem Text="Sobre" Value="Sobre" ToolTip="Quem desenvolveu o sistema" 
+                                NavigateUrl="~/Sobre.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Sair" ToolTip="Deslogar do sistema" Value="Sair">
+                            </asp:MenuItem>
+                        </Items>
+                        <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticSelectedStyle BackColor="#507CD1" />
+                    </asp:Menu>
+                    </td>
+                <td class="style14" valign="top">
+                    &nbsp;</td>
+                <td class="style9" valign="top">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="style12" colspan="3" valign="middle">
+                    <asp:Image ID="Image2" runat="server" Height="17px" 
+                        ImageUrl="~/img/logo-rodape.gif" Width="89px" />
+                    <asp:Label ID="Label1" runat="server" Font-Names="Calibri" Font-Size="Large" 
+                        Text="©Desenvolvido por Baciotti e Vasconcellos - Todos os direitos reservados."></asp:Label>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
