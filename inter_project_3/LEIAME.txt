@@ -1,0 +1,14 @@
+; ; ; LEIA - ME ; ; ; 
+Projeto Interdisciplinar Horizontal desenvolvido por:
+- Lucas Baciotti Moreira
+- Johnny Salvador de Camargos
+- Renato Vasconcellos de Farias
+
+Alunos do terceiro ano do curso de Sistemas de Informação na FEIT - UEMG	
+No ano de 2011.
+
+
+:: OBSERVAÇÃO IMPORTANTE :: 
+
+Colocar a pasta 'PIH2011' na raiz do drive 'C:', pois as conexoes com o banco de dados apontam para 
+esse caminho (C:/PIH2011)

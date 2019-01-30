@@ -1,0 +1,103 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>:: Banco de Sangue :: </title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+            margin-right: 0px;
+        }
+        .style3
+        {
+            height: 110px;
+            width: 90%;
+        }
+        .style4
+        {
+            height: 110px;
+            width: 146px;
+        }
+        .style5
+        {
+            height: 20px;
+        }
+    </style>
+</head>
+<body style="height: 293px">
+    <form id="form1" runat="server">
+    <table class="style1">
+        <tr>
+            <td class="style5" colspan="2">
+                <asp:Image ID="Image1" runat="server" ImageAlign="AbsMiddle" 
+                    ImageUrl="~/img/Inter_cabe.jpg" Width="862px" />
+                <br />
+            </td>
+        </tr>
+        <tr valign="top">
+            <td class="style4" valign="top">
+                <asp:Menu ID="Menu1" runat="server" BackColor="#B5C7DE" 
+                    DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
+                    ForeColor="#284E98" StaticSubMenuIndent="10px">
+                    <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <DynamicMenuStyle BackColor="#B5C7DE" />
+                    <DynamicSelectedStyle BackColor="#507CD1" />
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Inicio.aspx" Text="Início" Value="Início">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Doações.aspx" Text="Doações" Value="Doações">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ListagemVoluntarios.aspx" Text="Voluntários" 
+                            Value="Pessoas">
+                            <asp:MenuItem NavigateUrl="~/CadastroVoluntarios.aspx" Text="Cadastro de Voluntários" 
+                                Value="Cadastro de Voluntários"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ListagemFuncionarios.aspx" Text="Funcionários" 
+                            Value="Funcionários">
+                            <asp:MenuItem NavigateUrl="~/CadastroFuncionario.aspx" 
+                                Text="Cadastro de Funcionário" Value="Cadastro de Funcionário">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Sangue.aspx" Text="Banco de Sangue" 
+                            Value="Sangues">
+                            <asp:MenuItem NavigateUrl="~/ListagemRetiradas.aspx" Text="Retiradas" 
+                                Value="Retiradas"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/CadEstabelecimento.aspx" Text="Estabelecimento" 
+                            Value="Estabelecimento"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Relatorios.aspx" Text="Relatórios" 
+                            Value="Relatórios"></asp:MenuItem>
+                        <asp:MenuItem Text="Ajuda" Value="Ajuda" NavigateUrl="~/Ajuda.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Sobre" Value="Sobre" NavigateUrl="~/Sobre.aspx"></asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticSelectedStyle BackColor="#507CD1" />
+                </asp:Menu>
+&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:LoginStatus ID="LoginStatus1" runat="server" />
+            </td>
+            <td class="style3">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <p>
+                        </p>
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <asp:Image ID="Image2" runat="server" ImageAlign="Left" 
+                    ImageUrl="~/img/Inter_roda.jpg" style="text-align: center" Width="778px" />
+                <br />
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
